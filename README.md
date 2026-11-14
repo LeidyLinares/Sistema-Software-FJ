@@ -1,4 +1,4 @@
-# Sistema Integral de Gestión de Clientes, Servicios y Reservas
+# Sistema Integral de Gestión de Clientes, Servicios y Reservas.
 Proyecto desarrollado para el curso de Programacion (213023)
 # Objetivos
 Desarrollar un sistema orientado a objetos para gestionar clientes, servicios y reservas de la empresa Software FJ.
