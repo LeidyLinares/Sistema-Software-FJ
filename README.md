@@ -1,15 +1,44 @@
-# Sistema Integral de Gestión de Clientes, Servicios y Reservas.
-Proyecto desarrollado para el curso de Programacion (213023)
-# Objetivos
-Desarrollar un sistema orientado a objetos para gestionar clientes, servicios y reservas de la empresa Software FJ.
-#  Tecnologías
- * Python 3.
- * Programación Orientada a Objetos.
-# Integrantes
- * Leidy Liliana Linares Parra.
-# Funcionalidades
- * Gestión de clientes.
- * Gestión de servicios.
- * Gestión de reservas.
- * Manejo de excepciones personalizadas.
- * Registro de eventos en logs.
+# Sistema Integral de Gestión de Clientes, Servicios y Reservas
+
+Proyecto desarrollado para el curso de Programación (213023) - UNAD.
+
+## Objetivos
+
+Desarrollar un sistema orientado a objetos para gestionar clientes, servicios y reservas de la empresa Software FJ, aplicando manejo de excepciones para garantizar estabilidad y robustez.
+
+## Tecnologías
+
+- Python 3
+- Programación Orientada a Objetos (abstracción, herencia, polimorfismo y encapsulación)
+
+## Integrantes
+
+- Leidy Liliana Linares Parra
+- Dary Ramírez Marín
+
+## Funcionalidades
+
+- Gestión de clientes con validación de datos.
+- Gestión de servicios: reserva de salas, alquiler de equipos y asesorías especializadas.
+- Gestión de reservas con control de estados (Pendiente, Confirmada, Cancelada).
+- Manejo de excepciones personalizadas (`ClienteError`, `ServicioError`, `ReservaError`).
+- Registro de eventos y errores en `logs/sistema.log`.
+- Simulación de 12 operaciones sin que el programa se detenga ante errores.
+
+## Estructura
+
+```
+src/
+├── excepciones.py     # Excepciones personalizadas
+├── entidad.py         # Clase abstracta Entidad
+├── cliente.py         # Clase Cliente
+├── servicio.py        # Servicio (abstracta) y servicios derivados
+├── reserva.py         # Clase Reserva
+├── logger_config.py   # Configuración de logs
+└── main.py            # Simulación de operaciones
+```
+
+## Ejecución
+
+```bash
+python src/main.py
