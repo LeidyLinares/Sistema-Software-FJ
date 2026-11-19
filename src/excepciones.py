@@ -7,15 +7,25 @@ class SistemaError(Exception):
 
 
 class ClienteError(SistemaError):
-    """Se lanza cuando los datos de un cliente son inválidos."""
+    """Datos de cliente inválidos, faltantes o duplicados."""
     pass
 
 
 class ServicioError(SistemaError):
-    """Se lanza cuando los datos de un servicio son inválidos."""
+    """Datos de servicio inválidos o faltantes."""
+    pass
+
+
+class ServicioNoDisponibleError(ServicioError):
+    """El servicio solicitado no está disponible."""
+    pass
+
+
+class CalculoError(SistemaError):
+    """Cálculo inconsistente (impuestos o descuentos fuera de rango)."""
     pass
 
 
 class ReservaError(SistemaError):
-    """Se lanza cuando una reserva no puede crearse o cambiar de estado."""
+    """La reserva no puede crearse o realizar la operación pedida."""
     pass

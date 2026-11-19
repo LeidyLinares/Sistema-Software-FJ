@@ -6,8 +6,14 @@ from excepciones import ClienteError
 class Cliente(Entidad):
     """Cliente de la empresa Software FJ."""
 
-    def __init__(self, nombre, documento):
+    def __init__(self, nombre=None, documento=None):
         super().__init__()  # Genera el id único de la entidad
+
+        # Parámetros faltantes
+        if nombre is None:
+            raise ClienteError("Falta el parámetro: nombre")
+        if documento is None:
+            raise ClienteError("Falta el parámetro: documento")
 
         # Validación del nombre: debe ser texto no vacío
         if not isinstance(nombre, str) or not nombre.strip():
