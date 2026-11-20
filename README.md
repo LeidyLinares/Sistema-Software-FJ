@@ -19,11 +19,13 @@ Desarrollar un sistema orientado a objetos para gestionar clientes, servicios y 
 ## Funcionalidades
 
 - Gestión de clientes con validación de datos.
-- Gestión de servicios: reserva de salas, alquiler de equipos y asesorías especializadas.
-- Gestión de reservas con control de estados (Pendiente, Confirmada, Cancelada).
-- Manejo de excepciones personalizadas (`ClienteError`, `ServicioError`, `ReservaError`).
+- Gestión de servicios: reserva de salas, alquiler de equipos y asesorías especializadas, con validación de parámetros y control de disponibilidad.
+- Gestión de reservas con duración y estados (Pendiente, Confirmada, Procesada, Cancelada).
+- Cálculo de costos sobrecargado: con impuestos y descuentos opcionales.
+- Listas internas para clientes, servicios y reservas (sin base de datos).
+- Manejo de excepciones personalizadas (`ClienteError`, `ServicioError`, `ServicioNoDisponibleError`, `CalculoError`, `ReservaError`) y encadenamiento de excepciones (`raise ... from`).
 - Registro de eventos y errores en `logs/sistema.log`.
-- Simulación de 12 operaciones sin que el programa se detenga ante errores.
+- Simulación de 22 operaciones sin que el programa se detenga ante errores.
 
 ## Estructura
 
@@ -34,8 +36,16 @@ src/
 ├── cliente.py         # Clase Cliente
 ├── servicio.py        # Servicio (abstracta) y servicios derivados
 ├── reserva.py         # Clase Reserva
+├── gestor.py          # Listas internas del sistema
 ├── logger_config.py   # Configuración de logs
 └── main.py            # Simulación de operaciones
+```
+
+## Ejecución
+
+```bash
+python src/main.py
+```
 ```
 
 ## Ejecución
